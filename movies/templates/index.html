@@ -1,1 +1,22 @@
+{%block content%}
+<style>
+	.logo {
+		width: 110px;
+		height: 30px;
+		margin: 15px 60px;
+		background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2000px-Netflix_2015_logo.svg.png');
+		background-size: cover;
+		position: relative;
+	}
+</style>
+<div class="logo"></div>
 <h1>welcome to Netflix.</h1>
+<div class="container">
+	<h1 class="title">Popular movies</h1>
+	{% for movie in popular %}
+	<a href="{% url 'netflix' movie.id %}">
+		<img class="tile__img" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="" />
+	</a>
+	{% endfor %}
+</div>
+{% endblock %}

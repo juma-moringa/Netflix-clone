@@ -3,5 +3,7 @@ from . import views
 
 
 urlpatterns = [
-      url(r'^$',views.index,name='index'),
+      
+      url(r'^$', views.movies, name='movies'),
+      url(r'^movie/(\d+)', views.youtube, name = 'netflix'),
 ]
